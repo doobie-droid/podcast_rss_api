@@ -9,12 +9,14 @@ const bodyParser = require("body-parser");
 const podcasts = []
 let counterId = 0
 const app = express();
-const port = 8080;
+
 app.use(express.json());
 app.use(bodyParser.json());
 var xmlJsonconverter = require("xml-js");
 
+const port = process.env.PORT || 8080;
 app.set("view engine", "ejs");
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
